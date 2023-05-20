@@ -60,10 +60,28 @@
         transform: rotate(360deg);
       }
     }
+    
+    /* Additional animation styles */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .logo-container {
+      animation: fadeIn 2s ease;
+      animation-delay: 1s;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="logo-container">
+      <img src="xbuckets-logo.png" alt="XBuckets Logo" class="logo">
+    </div>
     <h1>Coming Soon</h1>
     <p>We are working hard to bring you something awesome. Stay tuned!</p>
     <div class="countdown">
@@ -94,17 +112,4 @@
       document.getElementById("days").innerHTML = days + "d";
       document.getElementById("hours").innerHTML = hours + "h";
       document.getElementById("minutes").innerHTML = minutes + "m";
-      document.getElementById("seconds").innerHTML = seconds + "s";
-
-      // If the countdown is finished, display a message
-      if (distance < 0) {
-        clearInterval(countdown);
-        document.getElementById("days").innerHTML = "Expired";
-        document.getElementById("hours").innerHTML = "";
-        document.getElementById("minutes").innerHTML = "";
-        document.getElementById("seconds").innerHTML = "";
-      }
-    }, 1000);
-  </script>
-</body>
-</html>
+      document.getElementById("
