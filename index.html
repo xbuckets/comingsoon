@@ -10,6 +10,8 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
@@ -49,8 +51,9 @@
     }
 
     .logo {
-      width: 200px;
+      max-width: 100%;
       height: auto;
+      width: 200px;
       animation: heartbeat 1.5s ease-in-out infinite;
     }
 
@@ -63,6 +66,21 @@
       }
       100% {
         transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .countdown {
+        font-size: 20px;
+      }
+      .btn {
+        padding: 10px 20px;
       }
     }
   </style>
@@ -97,14 +115,4 @@
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // Display the countdown
-      document.getElementById("days").innerHTML = days + "d";
-      document.getElementById("hours").innerHTML = hours + "h";
-      document.getElementById("minutes").innerHTML = minutes + "m";
-      document.getElementById("seconds").innerHTML = seconds + "s";
-
-      // If the countdown is finished, display a message
-      if (distance < 0) {
-        clearInterval(countdown);
-        document.getElementById("days").innerHTML = "Expired";
-        document.getElementById("hours").innerHTML = "";
-       
+      document.getElementById("days").innerHTML = days +
