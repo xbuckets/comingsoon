@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Coming Soon</title>
+  <title>Coming Soon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .countdown {
+      font-size: 24px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .logo {
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <h1>Coming Soon</h1>
-    <p>This website is currently under construction. Please check back later.</p>
+    <p>We are working hard to bring you something awesome. Stay tuned!</p>
+    <div class="countdown">
+      <p id="days"></p>
+      <p id="hours"></p>
+      <p id="minutes"></p>
+      <p id="seconds"></p>
+    </div>
+    <a href="#" class="btn">Notify Me</a>
+  </div>
+
+  <script>
+    // Set the countdown date (replace with your desired date)
+    var countDownDate = new Date("2023-12-31").getTime();
+
+    // Update the countdown every second
+    var countdown = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      // Calculate the days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("days").innerHTML = days + "d";
+      document.getElementById("hours").innerHTML = hours + "h";
+      document.getElementById("minutes").innerHTML = minutes + "m";
+      document.getElementById("seconds").innerHTML = seconds + "s";
+
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("days").innerHTML = "Expired";
+        document.getElementById("hours").innerHTML = "";
+        document.getElementById("minutes").innerHTML = "";
+        document.getElementById("seconds").innerHTML = "";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
