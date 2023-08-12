@@ -1,127 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Coming Soon</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-image: url("bannerXBucketsFBDEKSTOP.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .container {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-size: 36px;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 18px;
-      color: #fff;
-      margin-bottom: 40px;
-    }
-
-    .countdown {
-      font-size: 24px;
-      color: #fff;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #45a049;
-    }
-
-    .logo {
-      max-width: 100%;
-      height: auto;
-      width: 200px;
-      animation: heartbeat 1.5s ease-in-out infinite;
-    }
-
-    @keyframes heartbeat {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 28px;
-      }
-      p {
-        font-size: 16px;
-      }
-      .countdown {
-        font-size: 20px;
-      }
-      .btn {
-        padding: 10px 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBuckets - Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="overlay"></div>
-  <div class="container">
-    <img src="XBuckets.png" alt="XBuckets Logo" class="logo">
-    <h1>Coming Soon</h1>
-    <p>We are working hard to bring you something awesome. Stay tuned!</p>
-    <div class="countdown">
-      <p id="days"></p>
-      <p id="hours"></p>
-      <p id="minutes"></p>
-      <p id="seconds"></p>
+    <div class="hero">
+        <nav class="bottom-left-nav">
+            <img class="logo" src="images/XB.png" alt="">
+        </nav>
+        <img class="xbucket" src="images/XBuckets.png" alt="">
+        <h1 class="header">
+            COMING <span class="soon">SOON</span>
+        </h1>
     </div>
-    <a href="#" class="btn">Notify Me</a>
-  </div>
+</body>
 
-  <script>
-    // Set the countdown date (replace with your desired date)
-    var countDownDate = new Date("2023-12-31").getTime();
-
-    // Update the countdown every second
-    var countdown = setInterval(function() {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-
-      // Calculate the days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math
+</html>
